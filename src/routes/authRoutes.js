@@ -9,7 +9,6 @@ const authController = new AuthController();
  * @property {string} username.required - Username
  * @property {string} email.required - Email
  * @property {string} password.required - Password
- * @property {string} birthDate.required - BirthDate (format: YYYY-MM-DD)
  * 
  */
 

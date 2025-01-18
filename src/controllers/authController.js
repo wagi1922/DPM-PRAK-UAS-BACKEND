@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 class AuthController {
   async register(req, res) {
-    const { username,email,password,birthDate} = req.body;
+    const { username,email,password} = req.body;
     // Logic for user registration
     try {
       // Check if user already exists
@@ -19,7 +19,6 @@ class AuthController {
         username,
         email,
         password: hashedPassword,
-        birthDate,
       });
       await newUser.save();
       res.status(201).json({ message: 'User registered successfully' });

@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes')
+const itemRoutes = require('./routes/itemRoutes');
 const setupSwagger = require('./swagger');
 const cors = require('cors');
 require('dotenv').config();
@@ -21,6 +22,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/items', itemRoutes);
 
 setupSwagger(app);
 
